@@ -16,5 +16,18 @@
 
   header h1 {
     color: #fff;
+    font-family: 'Dokdo', cursive;
     font-weight: 200;
   }
+
+  #whole-list-container{
+    width: 500px;
+    margin: 30px auto 20px auto;
+  }
+
+  .roof{
+      height: 50px;
+      border-radius: 50px 50px 0px 0px;
+      background-color: #FFE3ED;
+  }
+  
