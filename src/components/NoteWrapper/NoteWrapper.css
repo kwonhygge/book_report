@@ -1,0 +1,10 @@
+.noteWrapper{
+    width: 50rem;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .noteWrapper {
+        width: 90%;    
+    }
+}
