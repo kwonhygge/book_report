@@ -1,16 +1,13 @@
 import React from "react";
-import {Header,NoteList, Note} from "./components";
-import {NoteContainer} from "./containers";
-import propTypes from "prop-types";
+import {HashRouter,Route} from "react-router-dom";
+import {Create,Home} from "./routes";
+
 
 function App(){
-    
-    return(  
-        <div>
-            <Header />
-            <NoteContainer />
-        </div>
-    )
+    return <HashRouter>
+        <Route path="/" exact={true} component={Home} />
+        <Route path="/create" component={Create} />
+    </HashRouter>
 }
 
 export default App;
