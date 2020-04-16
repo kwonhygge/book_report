@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, Route, BrowserRouter as Router } from "react-router-dom";
-import Note from "../Note/Note";
+import { Link } from "react-router-dom";
 import "./NoteList.css";
 
 function NoteList(){
@@ -18,7 +17,7 @@ function NoteList(){
                             <li><h2>작은아씨들</h2></li>
                         </ul>
                     </div>
-                        <button className="add-btn">Add</button>
+                        <Link to="/create"><button className="add-btn">Add</button></Link>
                 </div>
         
     );

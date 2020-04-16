@@ -1,9 +1,10 @@
 import React from "react";
+import {Header,NoteMake} from "../components";
 
 function Create(){
     return(<div>
-<h1>create</h1>
-
+    <Header />
+    <NoteMake />
     </div>)
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
-import "./Note.css";
+import "./NoteMake.css";
 
-function Note(){
+function NoteMake(){
     return (
         <div>
         <input></input>
@@ -10,4 +10,4 @@ function Note(){
     )
 }
 
-export default Note;
+export default NoteMake;

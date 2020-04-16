@@ -1,11 +1,12 @@
 import React from "react";
 import App from "../../App"
+import {Link} from "react-router-dom";
 import "./Header.css";
 
 function Header(){
     return(
             <header>
-                <h1>읽고</h1>
+                <Link to="/" style={{textDecoration:"none"}}><h1>읽고</h1></Link>
             </header>
     );
 }

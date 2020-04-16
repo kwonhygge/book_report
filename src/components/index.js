@@ -1,12 +1,12 @@
 import Header from "./Header/Header";
-import Note from "./Note/Note";
+import NoteMake from "./NoteMake/NoteMake";
 import NoteList from "./NoteList/NoteList";
 import NoteWrapper from "./NoteWrapper/NoteWrapper";
 import NoteDetails from "./NoteDetails/NoteDetails";
 
 export{
     Header,
-    Note,
+    NoteMake,
     NoteList,
     NoteWrapper,
     NoteDetails
