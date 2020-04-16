@@ -4,7 +4,8 @@ import {NoteContainer} from "./containers";
 import propTypes from "prop-types";
 
 function App(){
-    return(
+    
+    return(  
         <div>
             <Header />
             <NoteContainer />
