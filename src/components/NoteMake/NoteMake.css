@@ -1,0 +1,13 @@
+
+#title{
+    width: 400px;
+    height: 50px;
+    font-size: 1rem;
+    margin-top: 40px;
+}
+#title::placeholder{
+    font-size: 1rem;
+}
+#md-editor{
+    margin-top: 20px;
+}
