@@ -15,7 +15,6 @@ function NoteMake(props){
 
     function submitNote(event){
         localStorage.setItem(note.title,note.content);
-        event.preventDefault();
       }
 
     function handleInputChange(event){
@@ -41,15 +40,15 @@ function NoteMake(props){
 
     return (
         <div>
-        <form>
-            <button onClick={submitNote}>click</button>
-            <input id="title" name="title" onChange={handleInputChange} placeholder="책 제목"></input>
+        <form action="/">
+            <input id="title" name="title" onChange={handleInputChange} placeholder="책 제목" required></input>
             <MdEditor
                 value="# 느낀 점을 작성해주세요."
                 renderHTML={(text) => mdParser.render(text)}
                 style={{height:"400px"}}
                 onChange={handleEditorChange}
             />
+            <button className="save-btn" onClick={submitNote}>Save</button>
         
         </form>
         
