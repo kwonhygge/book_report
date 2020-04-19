@@ -3,12 +3,12 @@ import {Header,NoteList, Note} from "../components";
 import {NoteContainer} from "../containers";
 import propTypes from "prop-types";
 
-function App(){
-    console.log("APp")
+function App(props){
+    const state = props.history.location.state;
     return(  
         <div>
             <Header />
-            <NoteContainer />
+            <NoteContainer state={state} />
         </div>
     )
 }

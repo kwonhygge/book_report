@@ -33,8 +33,10 @@ class NoteMake extends React.Component{
         const {history,location} = this.props.props;
         console.log(location);
         event.preventDefault();
-        location.state.onAdd(note);
-        history.push("/");
+        history.push({
+          pathname:"/",
+          state:{note:note}
+        });
       }
 
     handleInputChange(event){

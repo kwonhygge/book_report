@@ -4,36 +4,36 @@ import "./NoteList.css";
 
 class NoteList extends React.Component{
     constructor(props){
-        super(props); 
-        console.log(props);
+        super(props);
         this.addNote = this.addNote.bind(this);
     }
-    _isMounted = false;
+    propState=this.props.state;
     state={
-        notes:[]
+        notes:[{note:{
+            title:"Hello",
+            content:"Hello"
+        }}]
     }
     componentDidMount() {
-        console.log("Helloyo");
-        this._isMounted = true;
+        console.log("did")
+        console.log(this.propState)
+        if(this.propState!==undefined){
+            this.addNote(this.propState);
+        }
       }
 
     addNote(newNote){
-        console.log("Hello");
+        console.log("inside")
         console.log(newNote);
-        console.log(this._isMounted);
-            if(this._isMounted){
-                console.log("inside")
-                this.setState(prevnotes => {
-                    return [...prevnotes,newNote];
-                  })
-            }
+        if(!this.notes){
+            this.setState(prevnotes => ({
+                notes:[prevnotes.notes,newNote]
+            }))
+        }else{
+            this.setState({notes:[newNote]});
+        }
+        
       }
-
-      componentWillUnmount() {
-            this._isMounted = false;
-            
-      }
-
     render(){
         console.log("render");
         console.log(this.state.notes)

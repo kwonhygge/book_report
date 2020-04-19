@@ -1,17 +1,12 @@
-import React, {Component} from "react";
+import React from "react";
 import {NoteWrapper, NoteList} from "../../components";
 
-class NoteContainer extends Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
+function NoteContainer(props){
         return (
             <NoteWrapper>
-                <NoteList />
+                <NoteList state={props.state}/>
             </NoteWrapper>
         )
-    }
 }
 
 export default NoteContainer;
