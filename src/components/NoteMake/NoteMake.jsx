@@ -12,6 +12,14 @@ class NoteMake extends React.Component{
     this.handleEditorChange = this.handleEditorChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
+  componentDidMount(){
+
+    const {location,history}=this.props.props;
+    if(location.state===undefined){
+      history.push("/");
+    }
+  }
+
   state={
     note:{
       title:"",
@@ -20,17 +28,13 @@ class NoteMake extends React.Component{
   }
     mdParser = new MarkdownIt();
 
-    submitNote(event){
-        event.preventDefault();
+    submitNote(event){  
         const {note} = this.state;
-        console.log({note});
-        localStorage.setItem(note.title,note.content);
-        this.props.history.push({
-          pathname: '/',
-          state: { note: note }
-        })
-        
-        
+        const {history,location} = this.props.props;
+        console.log(location);
+        event.preventDefault();
+        location.state.onAdd(note);
+        history.push("/");
       }
 
     handleInputChange(event){
@@ -52,7 +56,7 @@ class NoteMake extends React.Component{
     render(){
       return (
         <div>
-        <form>
+        <form onSubmit={this.submitNote}>
             <input id="title" name="title" onChange={this.handleInputChange} placeholder="책 제목" required></input>
             <MdEditor
                 value="# 느낀 점을 작성해주세요."
@@ -60,7 +64,7 @@ class NoteMake extends React.Component{
                 style={{height:"400px"}}
                 onChange={this.handleEditorChange}
             />
-            <button className="save-btn" onClick={this.submitNote}>Save</button>
+            <button type="submit" className="save-btn">Save</button>
         
         </form>
         
