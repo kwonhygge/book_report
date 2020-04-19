@@ -1,8 +1,9 @@
-import React from "react";
+import React ,{useState} from "react";
 import { Link } from "react-router-dom";
 import "./NoteList.css";
 
 function NoteList(){
+    const [notes, setNotes] = useState([]);
 
     return(
             <div id="whole-list-container">
@@ -17,7 +18,9 @@ function NoteList(){
                             <li><h2>작은아씨들</h2></li>
                         </ul>
                     </div>
-                        <Link to="/create"><button className="add-btn">Add</button></Link>
+                        <Link to={{
+                            pathname:"/create"
+                        }}><button className="add-btn">Add</button></Link>
                 </div>
         
     );

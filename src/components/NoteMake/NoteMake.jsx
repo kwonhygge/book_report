@@ -1,59 +1,72 @@
-import React, {useState} from "react";
+import React from "react";
 import "./NoteMake.css";
 import MarkdownIt from 'markdown-it'
 import MdEditor from 'react-markdown-editor-lite'
 import {Link} from "react-router-dom";
 import 'react-markdown-editor-lite/lib/index.css';
 
-function NoteMake(props){
-    const [note,setNote] = useState({
-        title:"",
-        content:""
-    });
+class NoteMake extends React.Component{
+  constructor(props){
+    super(props);
+    this.submitNote = this.submitNote.bind(this);
+    this.handleEditorChange = this.handleEditorChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+  state={
+    note:{
+      title:"",
+      content:""
+    }
+  }
+    mdParser = new MarkdownIt();
 
-    const mdParser = new MarkdownIt();
-
-    function submitNote(event){
+    submitNote(event){
+        event.preventDefault();
+        const {note} = this.state;
+        console.log({note});
         localStorage.setItem(note.title,note.content);
-      }
-
-    function handleInputChange(event){
-        const {name,value} = event.target;
-    
-        setNote((prevValue)=>{
-          return{
-            ...prevValue,
-            [name]:value
-          };
-        });
-    
-      }
-
-    function handleEditorChange({html}) { 
-        setNote((prevValue)=>{
-            return{
-                ...prevValue,
-                ["content"]:html
-            }
+        this.props.history.push({
+          pathname: '/',
+          state: { note: note }
         })
+        
+        
       }
 
-    return (
+    handleInputChange(event){
+      const title = event.target.value;
+      console.log(this.state.note)
+        this.setState(prevValue=>({
+          note:{title:title,content:prevValue.note.content}
+        }))
+        
+      }
+
+    handleEditorChange({html}) { 
+      console.log(this.state.note)
+      this.setState(prevValue=>({
+        note:{title:prevValue.note.title,content:html}
+      }))
+      }
+
+    render(){
+      return (
         <div>
-        <form action="/">
-            <input id="title" name="title" onChange={handleInputChange} placeholder="책 제목" required></input>
+        <form>
+            <input id="title" name="title" onChange={this.handleInputChange} placeholder="책 제목" required></input>
             <MdEditor
                 value="# 느낀 점을 작성해주세요."
-                renderHTML={(text) => mdParser.render(text)}
+                renderHTML={(text) => this.mdParser.render(text)}
                 style={{height:"400px"}}
-                onChange={handleEditorChange}
+                onChange={this.handleEditorChange}
             />
-            <button className="save-btn" onClick={submitNote}>Save</button>
+            <button className="save-btn" onClick={this.submitNote}>Save</button>
         
         </form>
         
         </div>
     )
+    }
 }
 
 export default NoteMake;
