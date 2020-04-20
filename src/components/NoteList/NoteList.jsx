@@ -33,7 +33,7 @@ function NoteList(){
                                     state:{
                                         note:eachNote
                                     }
-                                }}><Note key={index} id={index} title={eachNote.title} /></Link>
+                                }} style={{textDecoration:"none"}}><Note key={index} id={index} title={eachNote.title} /></Link>
                             ))}
                         </ul>
                     </div>

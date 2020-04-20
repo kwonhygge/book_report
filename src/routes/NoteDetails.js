@@ -1,13 +1,12 @@
 import React from "react";
 import MarkdownIt from 'markdown-it'
+import "./NoteDetails.css"
 
 function NoteDetails(props){
     const {location}=props;
-    const mdParser = new MarkdownIt();
-
-    return(<div>
-        <div>{location.state.note.title}</div>
-        <div>{mdParser.render("## <h1>Hello</h1>")}</div>
+    return(<div id="detail-container">
+        <h1>{location.state.note.title}</h1>
+        <div dangerouslySetInnerHTML={ {__html: location.state.note.content}}></div>
     </div>
     )
 }
