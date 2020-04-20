@@ -1,65 +1,46 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React,{useState} from "react";
 import "./NoteList.css";
+import {NoteMake,Note} from "../../components";
 
-class NoteList extends React.Component{
-    constructor(props){
-        super(props);
-        this.addNote = this.addNote.bind(this);
-    }
-    propState=this.props.state;
-    state={
-        notes:[{note:{
-            title:"Hello",
-            content:"Hello"
-        }}]
-    }
-    componentDidMount() {
-        console.log("did")
-        console.log(this.propState)
-        if(this.propState!==undefined){
-            this.addNote(this.propState);
-        }
-      }
+function NoteList(){
+    const [notes, setNotes] = useState([]);
+    const [editMode,setEditMode] = useState(false);
 
-    addNote(newNote){
-        console.log("inside")
-        console.log(newNote);
-        if(!this.notes){
-            this.setState(prevnotes => ({
-                notes:[prevnotes.notes,newNote]
-            }))
-        }else{
-            this.setState({notes:[newNote]});
-        }
-        
+    console.log(notes);
+    function toggleEditMode(){
+        setEditMode(!editMode);
+    }
+
+    function addNote(newNote){
+        setEditMode(!editMode);
+        setNotes(prevnotes => {
+          return [...prevnotes,newNote];
+        })
       }
-    render(){
-        console.log("render");
-        console.log(this.state.notes)
-        return(
-            <div id="whole-list-container">
+    
+    return(<div>{
+        editMode&&
+        <NoteMake onAdd={addNote}/>
+    }{
+        !editMode&&
+        <div id="whole-list-container">
                     <div className="roof"></div>
                     <div className="list-container">
                         <ul>
-                            <li><h2>작은아씨들</h2></li>
-                            <li><h2>작은아씨들</h2></li>
-                            <li><h2>작은아씨들</h2></li>
-                            <li><h2>작은아씨들</h2></li>
-                            <li><h2>작은아씨들</h2></li>
-                            <li><h2>작은아씨들</h2></li>
+                            {notes.map((eachNote,index)=>(
+                              <Note key={index} id={index} title={eachNote.title}/>
+                            ))}
                         </ul>
                     </div>
-                        <Link to={{
-                            pathname:"/create",
-                            state:{
-                                onAdd:this.addNote
-                            }
-                        }}><button className="add-btn">Add</button></Link>
+                    <button className="add-btn" onClick={(e) => toggleEditMode()}>Add</button>
                 </div>
+    }
+    
+    </div>
+            
         
     );
-    }
+    
     
 }
 

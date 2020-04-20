@@ -1,10 +1,10 @@
 import React from "react";
 import {NoteWrapper, NoteList} from "../../components";
 
-function NoteContainer(props){
+function NoteContainer(){
         return (
             <NoteWrapper>
-                <NoteList state={props.state}/>
+                <NoteList/>
             </NoteWrapper>
         )
 }
