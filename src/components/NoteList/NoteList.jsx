@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import {Link} from "react-router-dom";
 import "./NoteList.css";
 import {NoteMake,Note} from "../../components";
 
@@ -6,7 +7,6 @@ function NoteList(){
     const [notes, setNotes] = useState([]);
     const [editMode,setEditMode] = useState(false);
 
-    console.log(notes);
     function toggleEditMode(){
         setEditMode(!editMode);
     }
@@ -28,7 +28,12 @@ function NoteList(){
                     <div className="list-container">
                         <ul>
                             {notes.map((eachNote,index)=>(
-                              <Note key={index} id={index} title={eachNote.title}/>
+                                <Link to={{
+                                    pathname:`/${index}`,
+                                    state:{
+                                        note:eachNote
+                                    }
+                                }}><Note key={index} id={index} title={eachNote.title} /></Link>
                             ))}
                         </ul>
                     </div>
