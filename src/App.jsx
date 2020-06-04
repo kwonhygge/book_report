@@ -1,5 +1,5 @@
 import React from "react";
-import {Header,NoteList, Note} from "./components";
+import {Header} from "./components";
 import {NoteContainer} from "./containers";
 import propTypes from "prop-types";
 
