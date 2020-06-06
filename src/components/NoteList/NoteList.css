@@ -12,7 +12,7 @@
   .roof{
       height: 60px;
       border-radius: 50px 50px 0px 0px;
-      background-color: #efb960;
+      background-color: #FFE3ED;
   }
 
   .list-container{
@@ -26,7 +26,7 @@
     position: absolute;
     right: 18px;
     bottom: -18px;
-    background: #ee91bc;
+    background: #8AC6D1;
     color: #fff;
     border: none;
     border-radius: 50%;
