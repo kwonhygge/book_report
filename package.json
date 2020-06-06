@@ -2,12 +2,14 @@
   "name": "book_report",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://openapi.naver.com/v1/search.json",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+<<<<<<< HEAD
 <<<<<<< HEAD
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
@@ -48,6 +50,10 @@
     "postcss-safe-parser": "4.0.1",
 =======
 >>>>>>> parent of 346dc1f... connecting server and client
+=======
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+>>>>>>> parent of 8e2fe44... Revert "Notelist css"
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
@@ -55,6 +61,7 @@
     "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
+<<<<<<< HEAD
     "resolve": "1.15.0",
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.2",
@@ -67,6 +74,11 @@
     "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "4.3.1"
+=======
+    "react-scripts": "3.4.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2"
+>>>>>>> parent of 8e2fe44... Revert "Notelist css"
   },
   "scripts": {
     "start": "node scripts/start.js",
