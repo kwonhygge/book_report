@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "babel-eslint": "10.1.0",
@@ -54,6 +55,10 @@
     "axios": "^0.19.2",
     "cors": "^2.8.5",
 >>>>>>> parent of 8e2fe44... Revert "Notelist css"
+=======
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+>>>>>>> parent of 8e2fe44... Revert "Notelist css"
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
@@ -61,6 +66,7 @@
     "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
+<<<<<<< HEAD
 <<<<<<< HEAD
     "resolve": "1.15.0",
     "resolve-url-loader": "3.1.1",
@@ -74,6 +80,11 @@
     "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "4.3.1"
+=======
+    "react-scripts": "3.4.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2"
+>>>>>>> parent of 8e2fe44... Revert "Notelist css"
 =======
     "react-scripts": "3.4.1",
     "semantic-ui-css": "^2.4.1",
